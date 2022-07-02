@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\productController;
+use App\Http\Controllers\authController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,13 @@ Route::post('/products', [productController::class, 'store']);
 Route::get('/products/{id}', [productController::class, 'show']);
 Route::put('/products/{id}', [productController::class, 'update']);
 Route::delete('/products/{id}', [productController::class, 'destroy']);
+
+
+
+Route::post('/signup', [authController::class, 'register']);
+Route::post('/signin', [authController::class, 'signin']);
+Route::get('/users', [authController::class, 'returnUsers']);
+
 
 
 
